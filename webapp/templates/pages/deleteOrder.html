@@ -1,0 +1,25 @@
+{% extends 'pages/index.html' %}
+{% load static %}
+
+{% block content %}
+<div class="del">
+     <h2>
+        Delete Order
+     </h2>
+<br>
+
+<p class="deleteMessage">Are you sure you want to delete this order {{order.product}} of  {{order.customerName}}?</p>
+
+      <form action="" method="POST">
+         {% csrf_token %}
+
+          <div class="buttonsDel">
+              <button type="submit" name="submit">Yes</button>
+              <button><a href="{% url 'order' %}">Cancel</a></button>
+          </div>
+
+      </form>
+</div>
+
+
+{% endblock %}

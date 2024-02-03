@@ -1,0 +1,92 @@
+{% extends 'pages/index.html' %}
+{% load static %}
+
+{% block content %}
+<section class="category">
+    <div class="list-items">
+        <h3>Popular Products</h3>
+        <div class="card-list">
+            <div class="card">
+                <img src="{% static '/images/baby wipes.jpeg' %}" alt="logo">
+                <div class="prod-title">
+                    <h1>Baby Wipes</h1>
+                </div>
+                <div class="price">
+                    <span>₱ 250</span><span><i id="p2" onclick="myFunction1()" class="icon-plus-sign-alt"></i></span>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="{% static '/images/bottle.jpeg' %}" alt="logo">
+                <div class="prod-title">
+                    <h1>Bottle</h1>
+                </div>
+                <div class="price">
+                    <span>₱ 150</span><span><i id="p1" onclick="myFunction()" class="icon-plus-sign-alt"></i></span>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="{% static '/images/baby wipes.jpeg' %}" alt="logo">
+                <div class="prod-title">
+                    <h1>Abott Wipes</h1>
+                </div>
+                <div class="price">
+                    <span>₱ 350</span><span><i id="p3" onclick="myFunction3()" class="icon-plus-sign-alt"></i></span>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="{% static '/images/bottle2.jpeg' %}" alt="logo">
+                <div class="prod-title">
+                    <h1>Js Bottle</h1>
+                </div>
+                <div class="price">
+                    <span>₱ 200</span><span><i id="p4" onclick="myFunction4()" class="icon-plus-sign-alt"></i></span>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="{% static '/images/diaper.jpeg' %}" alt="logo">
+                <div class="prod-title">
+                    <h1>Pampers</h1>
+                </div>
+                <div class="price">
+                    <span>₱ 350</span><span><i id="p5" onclick="myFunction5()" class="icon-plus-sign-alt"></i></span>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="{% static '/images/jacket.jpeg' %}" alt="logo">
+                <div class="prod-title">
+                    <h1>Baby Jacket</h1>
+                </div>
+                <div class="price">
+                    <span>₱ 450</span><span><i id="p6" onclick="myFunction6()" class="icon-plus-sign-alt"></i></span>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="{% static '/images/shoes1.jpeg' %}" alt="logo">
+                <div class="prod-title">
+                    <h1>Baby Shoes</h1>
+                </div>
+                <div class="price">
+                    <span>₱ 550</span><span><i id="p7" onclick="myFunction7()" class="icon-plus-sign-alt"></i></span>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="{% static '/images/shoes2.jpeg' %}" alt="logo">
+                <div class="prod-title">
+                    <h1>Baby Shoes</h1>
+                </div>
+                <div class="price">
+                    <span>₱ 650</span><span><i id="p8" onclick="myFunction8()" class="icon-plus-sign-alt"></i></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

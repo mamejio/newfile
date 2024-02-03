@@ -1,0 +1,44 @@
+{% extends 'pages/index.html' %}
+{% load static %}
+
+{% block content %}
+<br>
+<div class="addProd">
+<button class="addButt"><a href="{% url 'addOrder' %}" class="add-button">Add Order</a></button>
+</div>
+<div class="table-responsive">
+    <table>
+        <thead>
+            <tr>
+                <th>Customer Name</th>
+                <th>Image</th>
+                <th>Product Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                {% for order in order %}
+                <td>{{order.customerName}}</td>
+                <td>
+                    <img src="{% static '/images/book_image.jpg' %}" alt="logo">
+                </td>
+                <td>{{order.product}}</td>
+                <td>{{order.price}}</td>
+                <td>{{order.quantity}}</td>
+                <td>
+                    <span class="action-btn">
+                        <a id="order" href="{% url 'editOrder' order.id %}">Edit</a>
+                        <a id="re1" href="{% url 'deleteOrder' order.id %}">Remove</a>
+                    </span>
+                </td>
+            </tr>
+        {% endfor %}
+
+
+        </tbody>
+    </table>
+</div>
+{% endblock %}

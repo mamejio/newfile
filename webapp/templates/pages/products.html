@@ -1,0 +1,39 @@
+<!-- products.html -->
+
+{% extends 'pages/index.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+<br>
+<div class="addProd">
+<button class="addButt"><a href="{% url 'addProduct' %}" class="add-button">Add Product</a></button>
+</div>
+<br>
+<br>
+
+<div class="product-list">
+   {% for product in product %}
+       <div class="product">
+           <h2>{{ product.name }}</h2>
+            <br>
+           <img src="{% static '/images/book_image.jpg' %}" alt="" style="height: 150px; width: 150px;">
+           <p>{{ product.description }}</p>
+           <p>Price: ₱{{ product.price }}</p>
+           <p>Rating: {% for _ in product.productreview_set.all %}★{% endfor %} ({{ product.productreview_set.count }} reviews)</p>
+           <ul>
+               {% for review in product.productreview_set.all %}
+                   <li>
+                       <strong>{{ review.reviewer_name }}</strong> - {{ review.comment }} (Rating: {{ review.rating }}★)
+                   </li>
+               {% endfor %}
+           </ul>
+
+           <div class="editDel">
+            <button class="editButt"><a href="{% url 'editProduct' product.id %}" class="add-button">Edit Product</a></button>
+            <button class="delButt"><a href="{% url 'deleteProduct' product.id %}" class="add-button">Delete Product</a></button>
+           </div>
+       </div>
+   {% endfor %}
+</div>
+{% endblock %}
